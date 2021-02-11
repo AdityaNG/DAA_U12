@@ -27,3 +27,6 @@ void merge(int arr[], int l, int m, int r);
 /* l is for left index and r is right index of the
 sub-array of arr to be sorted */
 void mergeSort(int arr[], int l, int r);
+
+void quickSort_helper(int arr[], int n); 
+void mergeSort_helper(int arr[], int n); 

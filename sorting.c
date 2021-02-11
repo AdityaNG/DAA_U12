@@ -147,3 +147,10 @@ void mergeSort(int arr[], int l, int r)
         merge(arr, l, m, r);
     }
 }
+
+void quickSort_helper(int arr[], int n) {
+    quickSort(arr, 0, n);
+} 
+void mergeSort_helper(int arr[], int n) {
+    mergeSort(arr, 0, n);
+}
