@@ -1,0 +1,16 @@
+sort_fn[0] (arr_size=100) -> { time_used: 25.000000, cpu_time_used: 0.000025 }
+sort_fn[0] (arr_size=150) -> { time_used: 50.000000, cpu_time_used: 0.000050 }
+sort_fn[0] (arr_size=200) -> { time_used: 97.000000, cpu_time_used: 0.000097 }
+sort_fn[0] (arr_size=1000) -> { time_used: 1800.000000, cpu_time_used: 0.001800 }
+sort_fn[1] (arr_size=100) -> { time_used: 38.000000, cpu_time_used: 0.000038 }
+sort_fn[1] (arr_size=150) -> { time_used: 85.000000, cpu_time_used: 0.000085 }
+sort_fn[1] (arr_size=200) -> { time_used: 143.000000, cpu_time_used: 0.000143 }
+sort_fn[1] (arr_size=1000) -> { time_used: 3092.000000, cpu_time_used: 0.003092 }
+sort_fn[2] (arr_size=100) -> { time_used: 8.000000, cpu_time_used: 0.000008 }
+sort_fn[2] (arr_size=150) -> { time_used: 11.000000, cpu_time_used: 0.000011 }
+sort_fn[2] (arr_size=200) -> { time_used: 16.000000, cpu_time_used: 0.000016 }
+sort_fn[2] (arr_size=1000) -> { time_used: 103.000000, cpu_time_used: 0.000103 }
+sort_fn[3] (arr_size=100) -> { time_used: 12.000000, cpu_time_used: 0.000012 }
+sort_fn[3] (arr_size=150) -> { time_used: 18.000000, cpu_time_used: 0.000018 }
+sort_fn[3] (arr_size=200) -> { time_used: 23.000000, cpu_time_used: 0.000023 }
+sort_fn[3] (arr_size=1000) -> { time_used: 132.000000, cpu_time_used: 0.000132 }

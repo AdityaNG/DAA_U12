@@ -1,5 +1,7 @@
 #include "sorting.h"
 
+int comps = 0;
+
 void swap(int *xp, int *yp) 
 { 
     int temp = *xp; 
@@ -7,8 +9,9 @@ void swap(int *xp, int *yp)
     *yp = temp; 
 }
 
-void selectionSort(int arr[], int n) 
-{ 
+int selectionSort(int arr[], int n) 
+{
+    comps = 0;
     int i, j, min_idx; 
   
     // One by one move boundary of unsorted subarray 
@@ -16,25 +19,37 @@ void selectionSort(int arr[], int n)
     { 
         // Find the minimum element in unsorted array 
         min_idx = i; 
-        for (j = i+1; j < n; j++) 
-          if (arr[j] < arr[min_idx]) 
-            min_idx = j; 
+        for (j = i+1; j < n; j++) {
+	  comps++;
+          if (arr[j] < arr[min_idx])  {
+	     min_idx = j; 
+	  }
+	}
   
         // Swap the found minimum element with the first element 
         swap(&arr[min_idx], &arr[i]); 
-    } 
+    }
+
+    return comps;
 }  
 
 // A function to implement bubble sort 
-void bubbleSort(int arr[], int n) 
+int bubbleSort(int arr[], int n) 
 { 
+   comps = 0;
    int i, j; 
-   for (i = 0; i < n-1; i++)       
+   for (i = 0; i < n-1; i++) {
   
        // Last i elements are already in place    
-       for (j = 0; j < n-i-1; j++)  
-           if (arr[j] > arr[j+1]) 
+       for (j = 0; j < n-i-1; j++) {
+	   comps++;
+           if (arr[j] > arr[j+1]) {
               swap(&arr[j], &arr[j+1]); 
+	   }
+       }
+   }
+
+   return comps;
 } 
 
 
@@ -65,8 +80,9 @@ int partition (int arr[], int low, int high)
  arr[] --> Array to be sorted, 
   low  --> Starting index, 
   high  --> Ending index */
-void quickSort(int arr[], int low, int high) 
-{ 
+int quickSort(int arr[], int low, int high) 
+{
+    comps++;
     if (low < high) 
     { 
         /* pi is partitioning index, arr[p] is now 
@@ -133,10 +149,12 @@ void merge(int arr[], int l, int m, int r)
  
 /* l is for left index and r is right index of the
 sub-array of arr to be sorted */
-void mergeSort(int arr[], int l, int r)
+int mergeSort(int arr[], int l, int r)
 {
+    comps++;
+    
     if (l < r) {
-        // Same as (l+r)/2, but avoids overflow for
+        // Same as (l+r)/2, but aints overflow for
         // large l and h
         int m = l + (r - l) / 2;
  
@@ -148,9 +166,13 @@ void mergeSort(int arr[], int l, int r)
     }
 }
 
-void quickSort_helper(int arr[], int n) {
+int quickSort_helper(int arr[], int n) {
+    comps = 0;
     quickSort(arr, 0, n);
+    return comps;
 } 
-void mergeSort_helper(int arr[], int n) {
+int mergeSort_helper(int arr[], int n) {
+    comps = 0;
     mergeSort(arr, 0, n);
+    return comps;
 }

@@ -1,9 +1,9 @@
 void swap(int *xp, int *yp);
 
-void selectionSort(int arr[], int n);
+int selectionSort(int arr[], int n);
 
 // A function to implement bubble sort 
-void bubbleSort(int arr[], int n);
+int bubbleSort(int arr[], int n);
 
 
 /* This function takes last element as pivot, places 
@@ -17,7 +17,7 @@ int partition (int arr[], int low, int high);
  arr[] --> Array to be sorted, 
   low  --> Starting index, 
   high  --> Ending index */
-void quickSort(int arr[], int low, int high);
+int quickSort(int arr[], int low, int high);
 
 // Merges two subarrays of arr[].
 // First subarray is arr[l..m]
@@ -26,7 +26,7 @@ void merge(int arr[], int l, int m, int r);
  
 /* l is for left index and r is right index of the
 sub-array of arr to be sorted */
-void mergeSort(int arr[], int l, int r);
+int mergeSort(int arr[], int l, int r);
 
-void quickSort_helper(int arr[], int n); 
-void mergeSort_helper(int arr[], int n); 
+int quickSort_helper(int arr[], int n); 
+int mergeSort_helper(int arr[], int n); 
