@@ -2,17 +2,17 @@
 
 __uint128_t comps = 0;
 
-void swap(__uint128_t *xp, __uint128_t *yp) 
+void swap(int *xp, int *yp) 
 { 
-    __uint128_t temp = *xp; 
+    int temp = *xp; 
     *xp = *yp; 
     *yp = temp; 
 }
 
-__uint128_t selectionSort(__uint128_t arr[], __uint128_t n) 
+__uint128_t selectionSort(int arr[], int n) 
 {
     comps = 0;
-    __uint128_t i, j, min_idx; 
+    int i, j, min_idx; 
   
     // One by one move boundary of unsorted subarray 
     for (i = 0; i < n-1; i++) 
@@ -34,10 +34,10 @@ __uint128_t selectionSort(__uint128_t arr[], __uint128_t n)
 }  
 
 // A function to implement bubble sort 
-__uint128_t bubbleSort(__uint128_t arr[], __uint128_t n) 
+__uint128_t bubbleSort(int arr[], int n) 
 { 
    comps = 0;
-   __uint128_t i, j; 
+   int i, j; 
    for (i = 0; i < n-1; i++) {
   
        // Last i elements are already in place    
@@ -58,12 +58,12 @@ __uint128_t bubbleSort(__uint128_t arr[], __uint128_t n)
     array, and places all smaller (smaller than pivot) 
    to left of pivot and all greater elements to right 
    of pivot */
-__uint128_t partition (__uint128_t arr[], __uint128_t low, __uint128_t high) 
+__uint128_t partition (int arr[], int low, int high) 
 { 
-    __uint128_t pivot = arr[high];    // pivot 
-    __uint128_t i = (low - 1);  // Index of smaller element 
+    int pivot = arr[high];    // pivot 
+    int i = (low - 1);  // Index of smaller element 
   
-    for (__uint128_t j = low; j <= high- 1; j++) 
+    for (int j = low; j <= high- 1; j++) 
     { 
         // If current element is smaller than the pivot 
         if (arr[j] < pivot) 
@@ -80,14 +80,14 @@ __uint128_t partition (__uint128_t arr[], __uint128_t low, __uint128_t high)
  arr[] --> Array to be sorted, 
   low  --> Starting index, 
   high  --> Ending index */
-__uint128_t quickSort(__uint128_t arr[], __uint128_t low, __uint128_t high) 
+__uint128_t quickSort(int arr[], int low, int high) 
 {
     comps++;
     if (low < high) 
     { 
         /* pi is partitioning index, arr[p] is now 
            at right place */
-        __uint128_t pi = partition(arr, low, high); 
+        int pi = partition(arr, low, high); 
   
         // Separately sort elements before 
         // partition and after partition 
@@ -96,17 +96,48 @@ __uint128_t quickSort(__uint128_t arr[], __uint128_t low, __uint128_t high)
     } 
 } 
 
+__uint128_t quicksort(int number[25],int first,int last){
+   int i, j, pivot, temp;
+ 
+   comps++;
+   if(first<last){
+      pivot=first;
+      i=first;
+      j=last;
+
+      while(i<j){
+         while(number[i]<=number[pivot]&&i<last)
+            i++;
+         while(number[j]>number[pivot])
+            j--;
+         if(i<j){
+            temp=number[i];
+            number[i]=number[j];
+            number[j]=temp;
+         }
+      }
+
+      temp=number[pivot];
+      number[pivot]=number[j];
+      number[j]=temp;
+      quicksort(number,first,j-1);
+      quicksort(number,j+1,last);
+
+   }
+}
+
+
 // Merges two subarrays of arr[].
 // First subarray is arr[l..m]
 // Second subarray is arr[m+1..r]
-void merge(__uint128_t arr[], __uint128_t l, __uint128_t m, __uint128_t r)
+void merge(int arr[],int l, int m, int r)
 {
-    __uint128_t i, j, k;
-    __uint128_t n1 = m - l + 1;
-    __uint128_t n2 = r - m;
+    int i, j, k;
+    int n1 = m - l + 1;
+    int n2 = r - m;
  
     /* create temp arrays */
-    __uint128_t L[n1], R[n2];
+    int L[n1], R[n2];
  
     /* Copy data to temp arrays L[] and R[] */
     for (i = 0; i < n1; i++)
@@ -150,14 +181,14 @@ void merge(__uint128_t arr[], __uint128_t l, __uint128_t m, __uint128_t r)
  
 /* l is for left index and r is right index of the
 sub-array of arr to be sorted */
-__uint128_t mergeSort(__uint128_t arr[], __uint128_t l, __uint128_t r)
+__uint128_t mergeSort(int arr[], int l, int r)
 {
     //comps++;
     
     if (l < r) {
         // Same as (l+r)/2, but a__uint128_ts overflow for
         // large l and h
-        __uint128_t m = l + (r - l) / 2;
+        int m = l + (r - l) / 2;
  
         // Sort first and second halves
         mergeSort(arr, l, m);
@@ -167,12 +198,13 @@ __uint128_t mergeSort(__uint128_t arr[], __uint128_t l, __uint128_t r)
     }
 }
 
-__uint128_t quickSort_helper(__uint128_t arr[], __uint128_t n) {
+__uint128_t quickSort_helper(int arr[], int n) {
     comps = 0;
-    quickSort(arr, 0, n);
+    quicksort(arr, 0, n);
+    //quickSort(arr, 0, n);
     return comps;
 } 
-__uint128_t mergeSort_helper(__uint128_t arr[], __uint128_t n) {
+__uint128_t mergeSort_helper(int arr[], int n) {
     comps = 0;
     mergeSort(arr, 0, n);
     return comps;

@@ -146,3 +146,16 @@ static char *perrno(char *buf, int err) {
         return buf;
     }
 }
+
+
+/* Function to print an array */
+void printArray(__uint128_t arr[], __uint128_t size) 
+{ 
+    __uint128_t i; 
+    char buf[64];
+    for (i=0; i < size; i++) { 
+	itoa128(buf, arr[i], 10);
+        printf("%s ", buf);
+    }
+    printf("\n"); 
+}

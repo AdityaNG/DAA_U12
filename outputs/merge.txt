@@ -1,0 +1,13 @@
+sort_fn[0] (arr_size=100) -> { time_used: 12.000000, cpu_time_used: 0.000012, comparisions: 545 }
+sort_fn[0] (arr_size=150) -> { time_used: 16.000000, cpu_time_used: 0.000016, comparisions: 909 }
+sort_fn[0] (arr_size=200) -> { time_used: 21.000000, cpu_time_used: 0.000021, comparisions: 1285 }
+sort_fn[0] (arr_size=500) -> { time_used: 56.000000, cpu_time_used: 0.000056, comparisions: 3862 }
+sort_fn[0] (arr_size=1000) -> { time_used: 120.000000, cpu_time_used: 0.000120, comparisions: 8732 }
+sort_fn[0] (arr_size=1500) -> { time_used: 191.000000, cpu_time_used: 0.000191, comparisions: 13964 }
+sort_fn[0] (arr_size=2000) -> { time_used: 258.000000, cpu_time_used: 0.000258, comparisions: 19432 }
+sort_fn[0] (arr_size=2500) -> { time_used: 329.000000, cpu_time_used: 0.000329, comparisions: 25131 }
+sort_fn[0] (arr_size=3000) -> { time_used: 408.000000, cpu_time_used: 0.000408, comparisions: 30926 }
+sort_fn[0] (arr_size=3500) -> { time_used: 491.000000, cpu_time_used: 0.000491, comparisions: 36852 }
+sort_fn[0] (arr_size=4000) -> { time_used: 549.000000, cpu_time_used: 0.000549, comparisions: 42829 }
+sort_fn[0] (arr_size=4500) -> { time_used: 627.000000, cpu_time_used: 0.000627, comparisions: 48999 }
+sort_fn[0] (arr_size=5000) -> { time_used: 700.000000, cpu_time_used: 0.000700, comparisions: 55282 }

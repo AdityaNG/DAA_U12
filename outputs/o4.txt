@@ -1,0 +1,8 @@
+sort_fn[0] (arr_size=100000) -> { time_used: 11037966.000000, cpu_time_used: 11.037966, comparisions: 4999950000 }
+sort_fn[0] (arr_size=150000) -> { time_used: 23938922.000000, cpu_time_used: 23.938922, comparisions: 11249925000 }
+sort_fn[0] (arr_size=200000) -> { time_used: 42515446.000000, cpu_time_used: 42.515446, comparisions: 19999900000 }
+sort_fn[0] (arr_size=1000000) -> { time_used: 1077531729.000000, cpu_time_used: 1077.531729, comparisions: 499999500000 }
+sort_fn[1] (arr_size=100000) -> { time_used: 29142487.000000, cpu_time_used: 29.142487, comparisions: 4999950000 }
+sort_fn[1] (arr_size=150000) -> { time_used: 66209884.000000, cpu_time_used: 66.209884, comparisions: 11249925000 }
+sort_fn[1] (arr_size=200000) -> { time_used: 121325131.000000, cpu_time_used: 121.325131, comparisions: 19999900000 }
+
